@@ -17,8 +17,6 @@ Let's imagine we have a Page component in our NextJS app using the dynamic route
 ```jsx
 // /pages/[slug].js
 
-import * as React from 'react'
-
 export default function Page({ post }) {
   return (
     <>
