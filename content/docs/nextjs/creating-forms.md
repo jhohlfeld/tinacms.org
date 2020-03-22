@@ -32,13 +32,21 @@ Page.getInitialProps = function(ctx) {
   return {
     post: {
       fileRelativePath: `/posts/${slug}.json`,
-      data: content.default,
+      data: content,
     },
   }
 }
 ```
 
 The `getInitialProps` function is run by Next when the page is requested to load the data, and the return value is passed to our component as its initial props. Take note of `fileRelativePath`; we'll need that when we set up the form.
+
+A corresponding JSON file would look like that:
+
+```json
+{
+  "title": "Welcome to my awesome TinaCMS site!"
+}
+```
 
 ## Adding a Form for JSON With _useLocalJsonForm_
 
@@ -83,7 +91,7 @@ Since the object we're returning from `getInitialProps` already matches the `Jso
    return {
      post: {
        fileRelativePath: `/posts/${slug}.json`,
-       data: content.default,
+       data: content,
      },
    }
  }
@@ -175,7 +183,7 @@ EditablePage.getInitialProps = function(ctx) {
      */
     jsonFile: {
       fileRelativePath: `/posts/${slug}.json`,
-      data: content.default,
+      data: content,
     },
   }
 }
